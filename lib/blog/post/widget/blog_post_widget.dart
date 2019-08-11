@@ -11,21 +11,23 @@ class BlogPostWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
-      child: ListView(
-        padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-        children: [
-          Padding(
-            padding: EdgeInsets.only(bottom: 20),
-            child: Text(
-              title,
-              style: Theme.of(context).textTheme.display1,
+      child: IgnorePointer(
+        child: ListView(
+          padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.display1,
+              ),
             ),
-          ),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.body2,
-          )
-        ],
+            Text(
+              content,
+              style: Theme.of(context).textTheme.body2,
+            )
+          ],
+        ),
       ),
     );
   }
